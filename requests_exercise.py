@@ -15,7 +15,7 @@ request_url_1 = 'https://raw.githubusercontent.com/prof-rossetti/georgetown-opim
 response_1 = requests.get(request_url_1)
 
 parse_1 = json.loads(response_1.text)
-print(parse['name'])
+print(parse_1['name'])
 
 #challenge 2
 request_url_2 = 'https://raw.githubusercontent.com/prof-rossetti/georgetown-opim-243-201901/master/data/products.json'
@@ -24,7 +24,7 @@ parse_2 = json.loads(response_2.text)
 
 print('name: ID')
 for i in range(0, len(parse_2)):
-    print(parse[i]['name'] + ': ' + str(parse[i]['id']))
+    print(parse_2[i]['name'] + ': ' + str(parse_2[i]['id']))
     
 #challenge 3
 request_url_3 = 'https://raw.githubusercontent.com/prof-rossetti/georgetown-opim-243-201901/master/data/gradebook.json'
