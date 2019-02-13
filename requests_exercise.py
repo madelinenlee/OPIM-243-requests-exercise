@@ -13,9 +13,8 @@ import json
 #challenge 1
 request_url_1 = 'https://raw.githubusercontent.com/prof-rossetti/georgetown-opim-243-201901/master/data/products/1.json'
 response_1 = requests.get(request_url_1)
-
 parse_1 = json.loads(response_1.text)
-print(parse_1['name'])
+print('name: ' + parse_1['name'])
 
 #challenge 2
 request_url_2 = 'https://raw.githubusercontent.com/prof-rossetti/georgetown-opim-243-201901/master/data/products.json'
@@ -46,6 +45,8 @@ for i in range(0, len(student_list)):
         max_grade = student_list[i]['finalGrade']
     avg = avg + student_list[i]['finalGrade']
 
+avg = avg/len(student_list)
+
 print('min grade: ' + str(min_grade) + '%')
 print('max grade: ' + str(max_grade)+ '%')
-print('average grade: ' + str(round(avg/len(student_list), 2))+ '%')
+print('average grade: ' + str(round(avg, 2))+ '%')
